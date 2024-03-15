@@ -27,6 +27,7 @@ class Character
     private ?int $eveid = null;
 
     #[ORM\OneToMany(targetEntity: Ship::class, mappedBy: 'owner')]
+    #[Groups(["getShips"])]
     private Collection $ships;
 
     public function __construct()

@@ -40,7 +40,6 @@ class Ship
     private ?int $capacity = null;
 
     #[ORM\ManyToOne(inversedBy: 'ships')]
-    #[Groups(["getShips"])]
     private ?Character $owner = null;
 
     public function getId(): ?int
