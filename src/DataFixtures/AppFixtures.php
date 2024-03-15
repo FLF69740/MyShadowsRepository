@@ -44,6 +44,7 @@ class AppFixtures extends Fixture
         $samantha = new Character();
         $samantha->setName("Samantha");
         $samantha->setEveID(2120472954);
+        $samantha->setShipNumber(1);
 
         $manager->persist($samantha);
 

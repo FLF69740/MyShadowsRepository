@@ -27,8 +27,11 @@ class Character
     private ?int $eveid = null;
 
     #[ORM\OneToMany(targetEntity: Ship::class, mappedBy: 'owner')]
-    #[Groups(["getShips"])]
     private Collection $ships;
+
+    #[ORM\Column(nullable: true)]
+    #[Groups(["getShips"])]
+    private ?int $shipNumber = null;
 
     public function __construct()
     {
@@ -90,6 +93,18 @@ class Character
                 $ship->setOwner(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getShipNumber(): ?int
+    {
+        return $this->shipNumber;
+    }
+
+    public function setShipNumber(?int $shipNumber): static
+    {
+        $this->shipNumber = $shipNumber;
 
         return $this;
     }
