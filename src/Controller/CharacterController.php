@@ -19,7 +19,7 @@ class CharacterController extends AbstractController
     {
 
         $characters = $repository->findAll();
-        $json = $serializer->serialize($characters, 'json');
+        $json = $serializer->serialize($characters, 'json', ['groups' => 'getShips']);
 
         return new JsonResponse(
             $json,
@@ -36,7 +36,7 @@ class CharacterController extends AbstractController
     ): JsonResponse
     {
 
-        $json = $serializer->serialize($character, 'json');
+        $json = $serializer->serialize($character, 'json', ['groups' => 'getShips']);
         return new JsonResponse(
             $json,
             JsonResponse::HTTP_OK,
