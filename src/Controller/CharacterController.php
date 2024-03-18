@@ -16,6 +16,7 @@ class CharacterController extends AbstractController
 {
     /**
      * @OA\Tag(name="Character")
+     * @Security(name="Bearer")
      * 
      * @param CharacterRepository $characterRepository
      * @param SerializerInterface $serializer
@@ -42,6 +43,7 @@ class CharacterController extends AbstractController
 
     /**
      * @OA\Tag(name="Character")
+     * @Security(name="Bearer")
      * 
      * @param CharacterRepository $characterRepository
      * @param SerializerInterface $serializer
