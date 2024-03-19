@@ -33,6 +33,30 @@ class Character
     #[Groups(["getShips"])]
     private ?int $shipNumber = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $allianceId = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $birthday = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $corporationId = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $bloddlineId = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $gender = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $raceId = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $description = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?float $securityStatus = null;
+
     public function __construct()
     {
         $this->ships = new ArrayCollection();
@@ -105,6 +129,102 @@ class Character
     public function setShipNumber(?int $shipNumber): static
     {
         $this->shipNumber = $shipNumber;
+
+        return $this;
+    }
+
+    public function getAllianceId(): ?int
+    {
+        return $this->allianceId;
+    }
+
+    public function setAllianceId(?int $allianceId): static
+    {
+        $this->allianceId = $allianceId;
+
+        return $this;
+    }
+
+    public function getBirthday(): ?string
+    {
+        return $this->birthday;
+    }
+
+    public function setBirthday(?string $birthday): static
+    {
+        $this->birthday = $birthday;
+
+        return $this;
+    }
+
+    public function getCorporationId(): ?int
+    {
+        return $this->corporationId;
+    }
+
+    public function setCorporationId(?int $corporationId): static
+    {
+        $this->corporationId = $corporationId;
+
+        return $this;
+    }
+
+    public function getBloddlineId(): ?int
+    {
+        return $this->bloddlineId;
+    }
+
+    public function setBloddlineId(?int $bloddlineId): static
+    {
+        $this->bloddlineId = $bloddlineId;
+
+        return $this;
+    }
+
+    public function getGender(): ?string
+    {
+        return $this->gender;
+    }
+
+    public function setGender(?string $gender): static
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    public function getRaceId(): ?int
+    {
+        return $this->raceId;
+    }
+
+    public function setRaceId(?int $raceId): static
+    {
+        $this->raceId = $raceId;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): static
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getSecurityStatus(): ?float
+    {
+        return $this->securityStatus;
+    }
+
+    public function setSecurityStatus(?float $securityStatus): static
+    {
+        $this->securityStatus = $securityStatus;
 
         return $this;
     }
